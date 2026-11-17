@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Ayaan &amp; Zara — Nikah Invitation | Royal Wedding Invites</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Arabic, Luxury Serif, Calligraphy Script & Clean Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-dark-plum: #12060B;
+      --bg-royal-rose: #1D0A12;
+      --bg-velvet-deep: #14070D;
+      --glass-translucent: rgba(22, 8, 15, 0.44);
+      --gold-champagne: #F2CF7E;
+      --gold-metallic: #D4AF37;
+      --rose-blush: #FCE4EC;
+      --warm-cream: #F5E6D3;
+      --ivory-silk: #FFFDF9;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-dark-plum);
+      color: var(--ivory-silk);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .font-script {
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .font-serif-luxury {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    .font-sans-clean {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .font-arabic {
+      font-family: 'Amiri', serif;
+    }
+
+    /* ============================================================
+       1. DARK ROYAL ROSE-PLUM & CHAMPAGNE GOLD SILK BACKGROUND
+    ============================================================ */
+    .royal-ruby-bg {
+      background:
+        radial-gradient(circle at 50% 14%, rgba(242, 207, 126, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 18% 48%, rgba(252, 228, 236, 0.06) 0%, transparent 48%),
+        radial-gradient(circle at 82% 78%, rgba(242, 207, 126, 0.10) 0%, transparent 50%),
+        linear-gradient(180deg, #12060B 0%, #1D0A12 45%, #14070D 80%, #12060B 100%);
+      position: relative;
+    }
+
+    .translucent-glass-panel {
+      background: rgba(22, 8, 15, 0.44);
+      border: 1px solid rgba(242, 207, 126, 0.35);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.44), inset 0 1px 0 rgba(255, 253, 249, 0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    /* Double-Line Arch Frame */
+    .hero-arch-outer {
+      border: 1px solid rgba(242, 207, 126, 0.48);
+      border-radius: 170px 170px 26px 26px;
+      background: linear-gradient(180deg, rgba(22, 8, 15, 0.46) 0%, rgba(16, 5, 11, 0.30) 100%);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.52);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      position: relative;
+    }
+
+    .hero-arch-inner {
+      border: 1px solid rgba(242, 207, 126, 0.28);
+      border-radius: 162px 162px 20px 20px;
+    }
+
+    /* Floating Golden Bokeh Particles */
+    @keyframes floatDust {
+      0%, 100% {
+        transform: translateY(0) scale(0.92);
+        opacity: 0.38;
+      }
+      50% {
+        transform: translateY(-18px) scale(1.22);
+        opacity: 0.90;
+      }
+    }
+
+    .gold-dust-dot {
+      position: fixed;
+      border-radius: 9999px;
+      background: radial-gradient(circle, #FFF8DC 0%, #F2CF7E 60%, transparent 100%);
+      box-shadow: 0 0 10px rgba(242, 207, 126, 0.72);
+      pointer-events: none;
+      z-index: 2;
+      animation: floatDust var(--dur, 4.8s) infinite ease-in-out;
+      animation-delay: var(--delay, 0s);
+    }
+
+    /* ============================================================
+       2. 3D EMBOSSED ENVELOPE OVERLAY & METALLIC GOLD WAX SEAL
+    ============================================================ */
+    #envelope-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: radial-gradient(circle at center, #1D0A12 0%, #0E0408 100%);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.65s ease;
+    }
+
+    #envelope-overlay.opened {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .envelope-container {
+      position: relative;
+      width: 100%;
+      max-width: 450px;
+      height: 100dvh;
+      perspective: 1600px;
+      overflow: hidden;
+      pointer-events: none;
+      background: linear-gradient(165deg, #240B16 0%, #17070E 55%, #100409 100%);
+      border-left: 1px solid rgba(242, 207, 126, 0.38);
+      border-right: 1px solid rgba(242, 207, 126, 0.38);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.75);
+    }
+
+    .envelope-container * {
+      pointer-events: none;
+    }
+
+    .envelope-top-flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 55%;
+      z-index: 20;
+      transform-origin: top center;
+      transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+      filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.48));
+    }
+
+    .envelope-container.opened .envelope-top-flap {
+      transform: rotateX(180deg);
+    }
+
+    .golden-light-bloom {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 24px;
+      height: 24px;
+      border-radius: 9999px;
+      transform: translate(-50%, -50%) scale(0);
+      background: radial-gradient(
+        circle,
+        rgba(255, 246, 214, 1) 0%,
+        rgba(242, 207, 126, 0.85) 36%,
+        rgba(29, 10, 18, 0.5) 68%,
+        transparent 100%
+      );
+      z-index: 25;
+      opacity: 0;
+      transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.75s ease;
+    }
+
+    .envelope-container.opened .golden-light-bloom {
+      transform: translate(-50%, -50%) scale(45);
+      opacity: 1;
+    }
+
+    .gold-wax-seal {
+      position: relative;
+      z-index: 30;
+      width: 124px;
+      height: 124px;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      pointer-events: auto !important;
+      background: radial-gradient(
+        circle at 32% 28%,
+        #FFF6D6 0%,
+        #F2CF7E 42%,
+        #C59B27 78%,
+        #8F6A14 100%
+      );
+      box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.58),
+        0 0 0 6px rgba(242, 207, 126, 0.24),
+        inset 0 2px 6px rgba(255, 251, 230, 0.9),
+        inset 0 -5px 10px rgba(84, 56, 6, 0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, opacity 0.35s ease;
+      animation: sealPulse 2.8s infinite ease-in-out;
+    }
+
+    .gold-wax-seal:hover {
+      transform: scale(1.06);
+    }
+
+    .gold-wax-seal:active {
+      transform: scale(0.95);
+    }
+
+    .envelope-container.opened .gold-wax-seal {
+      opacity: 0;
+      transform: scale(0.72);
+    }
+
+    @keyframes sealPulse {
+      0%, 100% {
+        box-shadow:
+          0 14px 30px rgba(0, 0, 0, 0.58),
+          0 0 0 6px rgba(242, 207, 126, 0.24),
+          inset 0 2px 6px rgba(255, 251, 230, 0.9),
+          inset 0 -5px 10px rgba(84, 56, 6, 0.65);
+      }
+      50% {
+        box-shadow:
+          0 16px 36px rgba(242, 207, 126, 0.38),
+          0 0 0 14px rgba(242, 207, 126, 0.10),
+          inset 0 2px 6px rgba(255, 251, 230, 0.9),
+          inset 0 -5px 10px rgba(84, 56, 6, 0.65);
+      }
+    }
+
+    /* ============================================================
+       3. CENTERED SYMMETRIC SCRATCH-TO-REVEAL HEART (280 x 256)
+    ============================================================ */
+    .scratch-heart-stage {
+      position: relative;
+      width: 280px;
+      height: 256px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: none;
+    }
+
+    #scratch-heart-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 280px;
+      height: 256px;
+      z-index: 20;
+      cursor: grab;
+      touch-action: none;
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    #scratch-heart-canvas:active {
+      cursor: grabbing;
+    }
+
+    #scratch-heart-canvas.is-cleared {
+      opacity: 0;
+      transform: scale(1.04);
+      pointer-events: none;
+    }
+
+    /* Celebratory Petal Confetti */
+    .petal-particle {
+      position: fixed;
+      z-index: 60;
+      pointer-events: none;
+      border-radius: 65% 0 65% 0;
+      animation: petalFly 2.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    }
+
+    @keyframes petalFly {
+      0% {
+        transform: translate(0, 0) rotate(0deg) scale(0.75);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(var(--tx), var(--ty)) rotate(var(--rot)) scale(1.05);
+        opacity: 0;
+      }
+    }
+
+    /* Scroll Fade Animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.75s ease-out, transform 0.75s ease-out;
+    }
+
+    .fade-up.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+  <!-- ============================================================
+       PRIMARY ENVELOPE OPEN HANDLER (DEFINED AT TOP OF HEAD)
+  ============================================================ -->
+  <script>
+    var isEnvelopeOpened = false;
+
+    window.openEnvelope = function (evt) {
+      if (evt && typeof evt.stopPropagation === "function") {
+        evt.stopPropagation();
+      }
+      if (isEnvelopeOpened) return;
+      isEnvelopeOpened = true;
+
+      var overlay = document.getElementById("envelope-overlay");
+      var envCard = document.getElementById("envelope-card");
+      var mainInv = document.getElementById("main-invitation");
+
+      if (overlay) overlay.classList.add("opened");
+      if (envCard) envCard.classList.add("opened");
+
+      if (mainInv) {
+        mainInv.style.display = "block";
+        mainInv.style.opacity = "1";
+      }
+
+      document.body.style.overflowY = "auto";
+
+      try {
+        if (typeof window.initScratchHeart === "function") {
+          window.initScratchHeart(true);
+        }
+      } catch (e) {}
+
+      try {
+        if (typeof window.updateCountdown === "function") {
+          window.updateCountdown();
+        }
+      } catch (e) {}
+
+      try {
+        if (typeof window.spawnConfetti === "function") {
+          window.spawnConfetti(window.innerWidth / 2, window.innerHeight / 2, 42);
+        }
+      } catch (e) {}
+
+      try {
+        if (typeof window.startAmbientMusic === "function") {
+          window.startAmbientMusic();
+        }
+      } catch (e) {}
+
+      setTimeout(function () {
+        if (overlay) {
+          overlay.style.display = "none";
+        }
+        try {
+          var fadeItems = document.querySelectorAll(".fade-up");
+          for (var i = 0; i < fadeItems.length; i++) {
+            fadeItems[i].classList.add("in-view");
+          }
+          if (typeof window.initScratchHeart === "function") {
+            window.initScratchHeart(false);
+          }
+          if (typeof window.updateCountdown === "function") {
+            window.updateCountdown();
+          }
+        } catch (e) {}
+      }, 650);
+    };
+  </script>
+</head>
+<body class="royal-ruby-bg min-h-screen antialiased selection:bg-[#F2CF7E]/30 selection:text-[#FFFDF9]">
+
+  <!-- ============================================================
+       SUBTLE SWIRLING GOLD VECTOR LINES (POINTER-EVENTS: NONE)
+  ============================================================ -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+    <svg class="w-full h-full opacity-45" viewBox="0 0 430 932" preserveAspectRatio="xMidYMid slice" fill="none">
+      <path d="M-40 120 C 120 40, 260 220, 460 110" stroke="#F2CF7E" stroke-width="0.85" stroke-opacity="0.48" />
+      <path d="M-30 280 C 160 180, 140 430, 450 320" stroke="#FCE4EC" stroke-width="0.75" stroke-opacity="0.30" />
+      <path d="M60 -20 C 190 210, 40 460, 210 680 C 310 810, 160 910, 90 960" stroke="#F2CF7E" stroke-width="0.85" stroke-opacity="0.44" />
+      <path d="M380 -10 C 240 240, 390 470, 220 690 C 120 820, 290 900, 350 960" stroke="#F2CF7E" stroke-width="0.8" stroke-opacity="0.42" />
+      <ellipse cx="215" cy="466" rx="190" ry="310" stroke="#F2CF7E" stroke-width="0.7" stroke-opacity="0.34" transform="rotate(-12 215 466)" />
+      <ellipse cx="215" cy="466" rx="235" ry="150" stroke="#FCE4EC" stroke-width="0.65" stroke-opacity="0.26" transform="rotate(18 215 466)" />
+    </svg>
+  </div>
+
+  <!-- Floating Soft Golden Dust Particles -->
+  <div id="dust-particles-layer" class="pointer-events-none" aria-hidden="true"></div>
+
+  <!-- Top-Right Floating Audio Toggle -->
+  <button
+    id="audio-control-btn"
+    type="button"
+    aria-label="Toggle Background Music"
+    class="fixed top-4 right-4 z-40 w-10 h-10 rounded-full bg-[#1D0A12]/80 backdrop-blur-md border border-[#F2CF7E]/55 shadow-lg flex items-center justify-center text-[#F2CF7E] hover:border-[#FCE4EC] active:scale-95 transition"
+  >
+    <svg id="audio-on-svg" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+    </svg>
+    <svg id="audio-off-svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <line x1="23" y1="9" x2="17" y2="15"></line>
+      <line x1="17" y1="9" x2="23" y2="15"></line>
+    </svg>
+  </button>
+
+  <!-- ============================================================
+       1. ENVELOPE OVERLAY (#envelope-overlay)
+  ============================================================ -->
+  <section
+    id="envelope-overlay"
+    onclick="openEnvelope(event)"
+    role="button"
+    tabindex="0"
+    aria-label="Tap anywhere to open wedding invitation"
+  >
+    <div id="envelope-card" class="envelope-container flex flex-col justify-between">
+      <div class="golden-light-bloom"></div>
+
+      <!-- Double-Line Gold Arch Filigree Inside Envelope -->
+      <svg class="absolute inset-0 w-full h-full opacity-40" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" fill="none">
+        <path d="M36 764 L36 220 C36 105, 364 105, 364 220 L364 764 Z" stroke="#F2CF7E" stroke-width="1.1" />
+        <path d="M44 756 L44 224 C44 118, 356 118, 356 224 L356 756 Z" stroke="#FCE4EC" stroke-width="0.7" stroke-opacity="0.55" />
+        <circle cx="200" cy="400" r="158" stroke="#F2CF7E" stroke-width="0.9" stroke-dasharray="4 6" />
+      </svg>
+
+      <!-- Top Bismillah -->
+      <div class="relative z-30 pt-9 px-6 text-center">
+        <p id="env-bismillah" class="font-arabic text-2xl sm:text-3xl text-[#F2CF7E] drop-shadow-[0_2px_10px_rgba(0,0,0,0.65)]">
+          بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+        </p>
+        <p class="font-serif-luxury italic text-xs sm:text-sm text-[#FCE4EC] mt-1 tracking-wide">
+          In the name of Allah, the Most Beneficent, the Most Merciful
+        </p>
+      </div>
+
+      <!-- Envelope Pocket Folds -->
+      <svg class="absolute inset-0 w-full h-full z-10" viewBox="0 0 400 800" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="leftRubyFold" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#290D19" stop-opacity="0.96" />
+            <stop offset="100%" stop-color="#17070E" stop-opacity="0.72" />
+          </linearGradient>
+          <linearGradient id="rightRubyFold" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0%" stop-color="#290D19" stop-opacity="0.96" />
+            <stop offset="100%" stop-color="#17070E" stop-opacity="0.72" />
+          </linearGradient>
+          <linearGradient id="bottomRubyFold" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#220A14" stop-opacity="0.98" />
+            <stop offset="100%" stop-color="#12060B" stop-opacity="0.99" />
+          </linearGradient>
+        </defs>
+        <polygon points="0,0 200,410 0,800" fill="url(#leftRubyFold)" />
+        <polygon points="400,0 200,410 400,800" fill="url(#rightRubyFold)" />
+        <polygon points="0,800 200,405 400,800" fill="url(#bottomRubyFold)" />
+        <polyline points="0,800 200,405 400,800" fill="none" stroke="rgba(242,207,126,0.58)" stroke-width="1.4" />
+      </svg>
+
+      <!-- Top 3D Triangular Flap -->
+      <div class="envelope-top-flap">
+        <svg class="w-full h-full" viewBox="0 0 400 430" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="topRubyFlap" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#260C17" />
+              <stop offset="70%" stop-color="#1B0810" />
+              <stop offset="100%" stop-color="#12060B" />
+            </linearGradient>
+          </defs>
+          <polygon points="0,0 400,0 200,405" fill="url(#topRubyFlap)" />
+          <polyline points="0,0 200,405 400,0" fill="none" stroke="rgba(242,207,126,0.68)" stroke-width="1.6" />
+          <polyline points="18,0 200,378 382,0" fill="none" stroke="rgba(252,228,236,0.32)" stroke-width="0.9" />
+        </svg>
+      </div>
+
+      <!-- Center 3D Metallic Gold Wax Seal Button (#wax-seal-btn) -->
+      <div class="relative z-30 flex flex-col items-center justify-center my-auto px-4">
+        <button
+          id="wax-seal-btn"
+          type="button"
+          onclick="openEnvelope(event)"
+          class="gold-wax-seal"
+          aria-label="Tap to open invitation"
+        >
+          <div class="w-[100px] h-[100px] rounded-full border border-[#4A3204]/60 flex flex-col items-center justify-center text-center shadow-inner px-1.5">
+            <span class="font-serif-luxury font-bold text-xl tracking-wider text-[#1D0A12] leading-none">
+              A &amp; Z
+            </span>
+            <span class="font-sans-clean font-semibold text-[8px] tracking-wider uppercase text-[#1D0A12] mt-1.5 leading-tight">
+              TAP TO OPEN
+            </span>
+            <span class="font-serif-luxury font-semibold text-[10px] text-[#2A0E1A] mt-0.5 leading-none">
+              खोलने के लिए टैप करें
+            </span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Bottom Script "You Are Invited" -->
+      <div class="relative z-20 pb-11 px-6 text-center">
+        <p class="font-script text-4xl sm:text-[42px] text-[#F2CF7E] drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)]">
+          You Are Invited
+        </p>
+        <p class="font-sans-clean text-[10px] tracking-[0.25em] uppercase text-[#FCE4EC] mt-1">
+          Nikah Ceremony • Ayaan &amp; Zara
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MAIN INVITATION CONTENT (DARK ROYAL ROSE-PLUM TRANSLUCENT GLASS)
+  ============================================================ -->
+  <main id="main-invitation" style="display: none; opacity: 0; transition: opacity 0.65s ease;" class="relative z-10 max-w-md mx-auto px-4 pt-5 pb-14">
+
+    <!-- ==========================================================
+         2. HERO SECTION (DOUBLE-LINE ARCH FRAME)
+    ========================================================== -->
+    <section class="pt-2 pb-6 fade-up">
+      <div class="hero-arch-outer p-2.5">
+        <div class="hero-arch-inner px-5 pt-10 pb-8 text-center">
+
+          <!-- Top Arabic Bismillah -->
+          <p id="card-bismillah" class="font-arabic text-2xl sm:text-[26px] text-[#F2CF7E] drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+            بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+          </p>
+
+          <!-- Circular Monogram Crest: A & Z -->
+          <div class="w-20 h-20 mx-auto mt-4 mb-5 rounded-full border border-[#F2CF7E]/65 bg-[#12060B]/70 shadow-[0_0_24px_rgba(242,207,126,0.22)] flex items-center justify-center">
+            <span class="font-serif-luxury font-semibold text-2xl tracking-widest text-[#FFFDF9]">
+              A <span class="text-[#F2CF7E] italic">&amp;</span> Z
+            </span>
+          </div>
+
+          <!-- Top Welcome Line -->
+          <p id="hero-top-line" class="font-serif-luxury italic text-base sm:text-lg text-[#FCE4EC] leading-snug max-w-xs mx-auto">
+            We are honored to welcome you to the Nikah Ceremony of
+          </p>
+
+          <!-- Groom Block -->
+          <div class="mt-5">
+            <h1 id="groom-name" class="font-script text-6xl sm:text-[64px] text-[#FFFDF9] leading-none drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]">
+              Ayaan
+            </h1>
+            <p id="groom-parent" class="font-serif-luxury text-base sm:text-lg text-[#F5E6D3] mt-1">
+              Son of Mr. &amp; Mrs. Qureshi
+            </p>
+            <p id="groom-qual" class="font-sans-clean text-[11px] tracking-[0.2em] uppercase text-[#F2CF7E] font-semibold mt-1">
+              M.Tech, PhD
+            </p>
+            <p id="groom-role" class="font-serif-luxury italic text-base text-[#FCE4EC] mt-0.5">
+              Senior Architect
+            </p>
+          </div>
+
+          <!-- Divider "&" -->
+          <div class="flex items-center justify-center gap-3 my-4">
+            <span class="h-[1px] w-14 bg-gradient-to-r from-transparent to-[#F2CF7E]/70"></span>
+            <span class="font-script text-3xl text-[#F2CF7E]">&amp;</span>
+            <span class="h-[1px] w-14 bg-gradient-to-l from-transparent to-[#F2CF7E]/70"></span>
+          </div>
+
+          <!-- Bride Block -->
+          <div>
+            <h2 id="bride-name" class="font-script text-6xl sm:text-[64px] text-[#FFFDF9] leading-none drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]">
+              Zara
+            </h2>
+            <p id="bride-parent" class="font-serif-luxury text-base sm:text-lg text-[#F5E6D3] mt-1">
+              Daughter of Mr. &amp; Mrs. Sheikh
+            </p>
+            <p id="bride-qual" class="font-sans-clean text-[11px] tracking-[0.2em] uppercase text-[#F2CF7E] font-semibold mt-1">
+              B.Tech, MBA
+            </p>
+            <p id="bride-role" class="font-serif-luxury italic text-base text-[#FCE4EC] mt-0.5">
+              Advocate, High Court
+            </p>
+          </div>
+
+          <!-- Subtle Scroll Indicator -->
+          <div class="mt-8 pt-2 flex flex-col items-center text-[#F2CF7E]/85">
+            <span class="font-sans-clean text-[9px] tracking-[0.28em] uppercase">Scroll</span>
+            <svg class="w-4 h-4 mt-1 animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         3. WELCOME & CENTERED SYMMETRIC SCRATCH-TO-REVEAL HEART
+    ========================================================== -->
+    <section class="py-5 text-center fade-up">
+      <!-- Vertical Golden Thread & Heart Accent -->
+      <div class="flex flex-col items-center mb-4">
+        <span class="w-2 h-2 rounded-full bg-[#F2CF7E] shadow-[0_0_8px_#F2CF7E]"></span>
+        <span class="w-[1px] h-8 bg-gradient-to-b from-[#F2CF7E] to-transparent"></span>
+      </div>
+
+      <p id="welcome-message-text" class="font-serif-luxury italic text-lg sm:text-xl text-[#FFFDF9] leading-relaxed px-2">
+        “We are honored to welcome you to the Nikah ceremony of Ayaan &amp; Zara. As they begin their journey together in faith and love, we thank you for being part of this blessed occasion.”
+      </p>
+
+      <!-- Heart Reveal Header -->
+      <div class="mt-7 mb-4">
+        <h2 class="font-script text-4xl sm:text-[42px] text-[#FFFDF9] leading-tight">
+          Our forever begins
+        </h2>
+        <p class="font-sans-clean text-[10px] tracking-[0.26em] uppercase text-[#F2CF7E] font-semibold mt-1">
+          SCRATCH THE HEART TO REVEAL
+        </p>
+      </div>
+
+      <!-- Centered Symmetric Heart Container (280px x 256px) -->
+      <div class="scratch-heart-stage">
+        <!-- Underlying Gold-Bordered Heart Reveal Card -->
+        <svg class="absolute inset-0 w-full h-full pointer-events-none z-0 drop-shadow-[0_12px_28px_rgba(0,0,0,0.55)]" viewBox="0 0 280 256" fill="none">
+          <path
+            d="M140 242 C140 242, 18 164, 18 82 C18 40, 50 14, 86 14 C111 14, 130 27, 140 45 C150 27, 169 14, 194 14 C230 14, 262 40, 262 82 C262 164, 140 242, 140 242 Z"
+            fill="rgba(22, 8, 15, 0.72)"
+            stroke="#F2CF7E"
+            stroke-width="2"
+          />
+          <path
+            d="M140 233 C140 233, 26 159, 26 83 C26 46, 54 22, 86 22 C108 22, 127 34, 140 52 C153 34, 172 22, 194 22 C226 22, 254 46, 254 83 C254 159, 140 233, 140 233 Z"
+            stroke="#FCE4EC"
+            stroke-opacity="0.32"
+            stroke-width="0.9"
+          />
+        </svg>
+
+        <!-- Revealed Date Content Inside Heart -->
+        <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 pt-2 pointer-events-none">
+          <span class="font-serif-luxury italic text-sm text-[#FCE4EC]">
+            You're Invited!
+          </span>
+          <span id="revealed-date-text" class="font-serif-luxury font-bold text-2xl text-[#FFFDF9] mt-0.5 tracking-wide">
+            March 20, 2027
+          </span>
+          <span id="revealed-day-text" class="font-serif-luxury text-base text-[#F5E6D3] mt-0.5">
+            Saturday
+          </span>
+          <span id="revealed-time-text" class="font-sans-clean text-xs tracking-[0.2em] uppercase text-[#F2CF7E] font-semibold mt-1">
+            11:30 AM
+          </span>
+        </div>
+
+        <!-- Overlapping Interactive HTML5 Scratch Foil Canvas (280x256 @ dpr) -->
+        <canvas id="scratch-heart-canvas" width="280" height="256"></canvas>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         4. LIVE COUNTDOWN TIMER
+    ========================================================== -->
+    <section class="py-6 text-center fade-up">
+      <h2 class="font-script text-4xl sm:text-[42px] text-[#FFFDF9] leading-tight">
+        Counting Down to Forever
+      </h2>
+      <p class="font-sans-clean text-[10px] tracking-[0.26em] uppercase text-[#F2CF7E] font-semibold mt-1 mb-5">
+        UNTIL WE SAY QUBOOL HAI
+      </p>
+
+      <div class="grid grid-cols-4 gap-2.5">
+        <div class="translucent-glass-panel rounded-2xl py-3.5 px-2">
+          <span id="cd-days" class="block font-serif-luxury font-bold text-2xl sm:text-3xl text-[#FFFDF9]">00</span>
+          <span class="block font-sans-clean text-[9px] tracking-[0.18em] uppercase text-[#F2CF7E] mt-1">DAYS</span>
+        </div>
+        <div class="translucent-glass-panel rounded-2xl py-3.5 px-2">
+          <span id="cd-hours" class="block font-serif-luxury font-bold text-2xl sm:text-3xl text-[#FFFDF9]">00</span>
+          <span class="block font-sans-clean text-[9px] tracking-[0.18em] uppercase text-[#F2CF7E] mt-1">HOURS</span>
+        </div>
+        <div class="translucent-glass-panel rounded-2xl py-3.5 px-2">
+          <span id="cd-minutes" class="block font-serif-luxury font-bold text-2xl sm:text-3xl text-[#FFFDF9]">00</span>
+          <span class="block font-sans-clean text-[9px] tracking-[0.18em] uppercase text-[#F2CF7E] mt-1">MINUTES</span>
+        </div>
+        <div class="translucent-glass-panel rounded-2xl py-3.5 px-2">
+          <span id="cd-seconds" class="block font-serif-luxury font-bold text-2xl sm:text-3xl text-[#FFFDF9]">00</span>
+          <span class="block font-sans-clean text-[9px] tracking-[0.18em] uppercase text-[#F2CF7E] mt-1">SECONDS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         5. PROGRAM TIMELINE (MAIN EVENTS)
+    ========================================================== -->
+    <section class="py-5 fade-up">
+      <div class="text-center mb-5">
+        <div class="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#F2CF7E]/60 bg-[#12060B]/75 text-[#F2CF7E] mb-1.5">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9"></circle>
+            <polyline points="12 7 12 12 15 15"></polyline>
+          </svg>
+        </div>
+        <h2 class="font-script text-4xl sm:text-[42px] text-[#FFFDF9] leading-tight">
+          Program Timeline
+        </h2>
+        <p class="font-sans-clean text-[10px] tracking-[0.26em] uppercase text-[#F2CF7E] font-semibold mt-0.5">
+          MAIN WEDDING EVENTS
+        </p>
+      </div>
+
+      <div id="main-events-list" class="space-y-3.5">
+        <!-- Populated from WEDDING_CONFIG -->
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         6. VENUE DETAILS
+    ========================================================== -->
+    <section class="py-4 fade-up">
+      <div class="translucent-glass-panel rounded-3xl p-6 text-center">
+        <div class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[#F2CF7E]/60 bg-[#12060B]/75 text-[#F2CF7E] mb-2">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+
+        <h2 class="font-script text-4xl text-[#FFFDF9]">Venue</h2>
+        <h3 id="venue-name-text" class="font-serif-luxury font-bold text-2xl text-[#F2CF7E] mt-1">
+          Rambagh Palace, Jaipur
+        </h3>
+        <p id="venue-address-text" class="font-serif-luxury text-base text-[#F5E6D3] mt-1 leading-relaxed max-w-xs mx-auto">
+          Bhawani Singh Road, Rambagh, Jaipur, Rajasthan 302005
+        </p>
+
+        <!-- Minimalist Gold Palace Line-Art Illustration -->
+        <svg class="w-48 h-14 mx-auto my-4 opacity-75" viewBox="0 0 240 64" fill="none">
+          <path d="M12 60 H228" stroke="#F2CF7E" stroke-width="1" />
+          <path d="M92 60 V36 Q120 12 148 36 V60" stroke="#F2CF7E" stroke-width="1.1" />
+          <path d="M120 12 V4" stroke="#F2CF7E" stroke-width="1" />
+          <path d="M52 60 V42 Q68 28 84 42 V60" stroke="#FCE4EC" stroke-opacity="0.55" stroke-width="0.9" />
+          <path d="M156 60 V42 Q172 28 188 42 V60" stroke="#FCE4EC" stroke-opacity="0.55" stroke-width="0.9" />
+        </svg>
+
+        <a
+          id="venue-map-link"
+          href="https://maps.google.com/?q=Rambagh+Palace+Jaipur"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full border border-[#F2CF7E] bg-[#12060B]/70 text-[#F2CF7E] font-sans-clean text-xs font-semibold tracking-widest uppercase hover:bg-[#F2CF7E] hover:text-[#12060B] transition"
+        >
+          <span>View on Google Maps</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         7. DRESS CODE
+    ========================================================== -->
+    <section class="py-4 fade-up">
+      <div class="translucent-glass-panel rounded-3xl p-6 text-center">
+        <div class="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#F2CF7E]/60 bg-[#12060B]/75 text-[#F2CF7E] mb-1.5">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"></path>
+          </svg>
+        </div>
+        <h2 class="font-script text-4xl text-[#FFFDF9] mb-4">Dress Code</h2>
+
+        <div class="space-y-4">
+          <div>
+            <h3 class="font-sans-clean text-[11px] tracking-[0.22em] uppercase text-[#F2CF7E] font-semibold">
+              Women
+            </h3>
+            <p id="dress-women-text" class="font-serif-luxury text-base text-[#F5E6D3] mt-1">
+              Elegant formal attire in pastel or jewel tones (Sharara / Anarkali)
+            </p>
+          </div>
+          <div class="w-24 h-[1px] bg-[#F2CF7E]/30 mx-auto"></div>
+          <div>
+            <h3 class="font-sans-clean text-[11px] tracking-[0.22em] uppercase text-[#F2CF7E] font-semibold">
+              Men
+            </h3>
+            <p id="dress-men-text" class="font-serif-luxury text-base text-[#F5E6D3] mt-1">
+              Suit or traditional formal wear (Sherwani / Bandhgala)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         8. PRE-WEDDING EVENTS
+    ========================================================== -->
+    <section class="py-5 fade-up">
+      <div class="text-center mb-5">
+        <h2 class="font-script text-4xl sm:text-[42px] text-[#FFFDF9] leading-tight">
+          Pre-Wedding Celebrations
+        </h2>
+        <p class="font-sans-clean text-[10px] tracking-[0.26em] uppercase text-[#F2CF7E] font-semibold mt-0.5">
+          GATHERINGS &amp; FESTIVITIES
+        </p>
+      </div>
+
+      <div id="prewedding-events-list" class="space-y-3.5">
+        <!-- Populated from WEDDING_CONFIG -->
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         9. TRANSPORTATION & GIFTS (NO ACCOMMODATION SECTION)
+    ========================================================== -->
+    <section class="pt-3 pb-3 space-y-3.5 fade-up">
+      <!-- Transportation -->
+      <div class="translucent-glass-panel rounded-3xl p-5 text-center">
+        <div class="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#F2CF7E]/60 bg-[#12060B]/75 text-[#F2CF7E] mb-1.5">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="4" width="18" height="12" rx="2"></rect>
+            <path d="M3 10h18"></path>
+            <circle cx="7.5" cy="18.5" r="1.5"></circle>
+            <circle cx="16.5" cy="18.5" r="1.5"></circle>
+          </svg>
+        </div>
+        <h3 class="font-script text-3xl text-[#FFFDF9]">Transportation</h3>
+        <p id="transport-text" class="font-serif-luxury text-base text-[#F5E6D3] mt-1 leading-relaxed">
+          Shuttle service will be available from Jaipur Junction &amp; Airport to the venue at 09:30 AM.
+        </p>
+      </div>
+
+      <!-- Gifts -->
+      <div class="translucent-glass-panel rounded-3xl p-5 text-center">
+        <div class="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#F2CF7E]/60 bg-[#12060B]/75 text-[#F2CF7E] mb-1.5">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polyline points="20 12 20 22 4 22 4 12"></polyline>
+            <rect x="2" y="7" width="20" height="5"></rect>
+            <line x1="12" y1="22" x2="12" y2="7"></line>
+            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+          </svg>
+        </div>
+        <h3 class="font-script text-3xl text-[#FFFDF9]">Gifts</h3>
+        <p id="gifts-text" class="font-serif-luxury text-base text-[#F5E6D3] mt-1 leading-relaxed">
+          Your love, blessings, and duas are the greatest gifts we could ask for.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         10. RSVP / SEND A MESSAGE & LIVE WISHES FEED
+    ========================================================== -->
+    <section class="pt-5 pb-4 fade-up">
+      <div class="translucent-glass-panel rounded-3xl p-6">
+        <div class="text-center mb-5">
+          <div class="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#F2CF7E]/60 bg-[#12060B]/75 text-[#F2CF7E] mb-1.5">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <h2 class="font-script text-4xl text-[#FFFDF9]">
+            Send a Message
+          </h2>
+          <p class="font-sans-clean text-[10px] tracking-[0.22em] uppercase text-[#F2CF7E] font-semibold mt-0.5">
+            RSVP &amp; BLESSINGS
+          </p>
+        </div>
+
+        <form id="rsvp-form" class="space-y-3.5">
+          <div>
+            <label for="guest-name" class="block font-sans-clean text-[11px] tracking-wider uppercase text-[#F2CF7E] mb-1">
+              Your Name
+            </label>
+            <input
+              id="guest-name"
+              type="text"
+              required
+              placeholder="Enter your full name"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-[#12060B]/80 border border-[#F2CF7E]/40 text-[#FFFDF9] placeholder-[#F5E6D3]/45 font-serif-luxury text-base focus:outline-none focus:border-[#F2CF7E]"
+            />
+          </div>
+
+          <div>
+            <label for="guest-email" class="block font-sans-clean text-[11px] tracking-wider uppercase text-[#F2CF7E] mb-1">
+              Email
+            </label>
+            <input
+              id="guest-email"
+              type="email"
+              placeholder="you@example.com"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-[#12060B]/80 border border-[#F2CF7E]/40 text-[#FFFDF9] placeholder-[#F5E6D3]/45 font-serif-luxury text-base focus:outline-none focus:border-[#F2CF7E]"
+            />
+          </div>
+
+          <div>
+            <label for="guest-attending" class="block font-sans-clean text-[11px] tracking-wider uppercase text-[#F2CF7E] mb-1">
+              Will you be attending?
+            </label>
+            <select
+              id="guest-attending"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-[#12060B]/90 border border-[#F2CF7E]/40 text-[#FFFDF9] font-serif-luxury text-base focus:outline-none focus:border-[#F2CF7E]"
+            >
+              <option value="Joyfully Accepts">Joyfully Accepts</option>
+              <option value="Regretfully Declines">Regretfully Declines</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="guest-wish" class="block font-sans-clean text-[11px] tracking-wider uppercase text-[#F2CF7E] mb-1">
+              Your Message
+            </label>
+            <textarea
+              id="guest-wish"
+              rows="3"
+              required
+              placeholder="Write your wishes..."
+              class="w-full px-3.5 py-2.5 rounded-xl bg-[#12060B]/80 border border-[#F2CF7E]/40 text-[#FFFDF9] placeholder-[#F5E6D3]/45 font-serif-luxury text-base focus:outline-none focus:border-[#F2CF7E]"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-3 rounded-xl bg-gradient-to-r from-[#C59B27] via-[#F2CF7E] to-[#C59B27] text-[#12060B] font-sans-clean font-semibold text-xs tracking-widest uppercase shadow-md hover:brightness-105 active:scale-[0.99] transition"
+          >
+            Send Message
+          </button>
+        </form>
+
+        <div id="rsvp-success-msg" class="hidden mt-4 p-3 rounded-xl bg-[#1D0A12]/85 border border-[#F2CF7E]/55 text-center font-serif-luxury text-sm text-[#FFFDF9]">
+          JazakAllah Khair! Your RSVP and warm wishes have been sent to Ayaan &amp; Zara.
+        </div>
+
+        <div id="wishes-list" class="mt-5 space-y-2.5">
+          <!-- Live Guestbook Wishes Feed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         11. CLOSING SIGNATURE & ROYAL WEDDING INVITES FOOTER
+    ========================================================== -->
+    <footer class="text-center pt-6 pb-6 fade-up">
+      <p class="font-script text-4xl text-[#FFFDF9] leading-snug drop-shadow-[0_2px_10px_rgba(0,0,0,0.65)]">
+        We can't wait to celebrate with you!
+      </p>
+      <p class="font-script text-3xl text-[#F2CF7E] mt-1">
+        — Ayaan &amp; Zara
+      </p>
+
+      <div class="w-36 h-[1px] bg-gradient-to-r from-transparent via-[#F2CF7E]/65 to-transparent mx-auto my-5"></div>
+
+      <a
+        href="https://instagram.com/royalwedding.invite"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 font-sans-clean text-[10px] tracking-wider text-[#F5E6D3] hover:text-[#F2CF7E] transition"
+      >
+        <span>👑</span>
+        <span>Crafted by Royal Wedding Invites • @royalwedding.invite</span>
+      </a>
+    </footer>
+  </main>
+
+  <!-- ============================================================
+       DESIGNER CONFIGURATION & INTERACTIVE LOGIC
+  ============================================================ -->
+  <script>
+    /**
+     * ============================================================
+     * DESIGNER CONFIGURATION (WEDDING_CONFIG)
+     * Public editing is completely disabled for clients/guests.
+     * ============================================================
+     */
+    const WEDDING_CONFIG = {
+      bismillah: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+      heroTopLine: "We are honored to welcome you to the Nikah Ceremony of",
+
+      groomName: "Ayaan",
+      groomParent: "Son of Mr. & Mrs. Qureshi",
+      groomQualification: "M.Tech, PhD",
+      groomProfession: "Senior Architect",
+
+      brideName: "Zara",
+      brideParent: "Daughter of Mr. & Mrs. Sheikh",
+      brideQualification: "B.Tech, MBA",
+      brideProfession: "Advocate, High Court",
+
+      welcomeMessage:
+        "We are honored to welcome you to the Nikah ceremony of Ayaan & Zara. As they begin their journey together in faith and love, we thank you for being part of this blessed occasion.",
+      weddingDateDisplay: "March 20, 2027",
+      weddingDayDisplay: "Saturday",
+      weddingTimeDisplay: "11:30 AM",
+
+      mainEvents: [
+        {
+          title: "Baraat & Guest Arrival",
+          dateTime: "Mar 20, 2027, 10:30 AM",
+          note: "We warmly welcome you!"
+        },
+        {
+          title: "Nikah Ceremony",
+          dateTime: "Mar 20, 2027, 11:30 AM",
+          note: "Your gracious presence is requested."
+        },
+        {
+          title: "Walima (Reception)",
+          dateTime: "Mar 22, 2027, 07:30 PM",
+          note: "Your gracious presence is requested at the reception at 7:30 PM onwards."
+        }
+      ],
+
+      venueName: "Rambagh Palace, Jaipur",
+      venueAddress: "Bhawani Singh Road, Rambagh, Jaipur, Rajasthan 302005",
+      venueMapUrl: "https://maps.google.com/?q=Rambagh+Palace+Jaipur",
+
+      dressWomen: "Elegant formal attire in pastel or jewel tones (Sharara / Anarkali)",
+      dressMen: "Suit or traditional formal wear (Sherwani / Bandhgala)",
+
+      preWeddingEvents: [
+        {
+          title: "Mehendi",
+          dateTime: "Mar 17, 2027, 05:30 PM",
+          location: "At Bride's House (Gomti Nagar, Lucknow)"
+        },
+        {
+          title: "Haldi",
+          dateTime: "Mar 18, 2027, 11:30 AM",
+          location: "At Groom's House (Civil Lines, Jaipur)"
+        },
+        {
+          title: "Sangeet / Qawwali Night",
+          dateTime: "Mar 18, 2027, 08:30 PM",
+          location: "At The Emerald Banquet"
+        }
+      ],
+
+      transportation:
+        "Shuttle service will be available from Jaipur Junction & Airport to the venue at 09:30 AM.",
+      gifts:
+        "Your love, blessings, and duas are the greatest gifts we could ask for."
+    };
+
+    /* ============================================================
+       1. POPULATE DOM FROM WEDDING_CONFIG
+    ============================================================ */
+    function initInvitationContent() {
+      try {
+        document.getElementById("env-bismillah").textContent = WEDDING_CONFIG.bismillah;
+        document.getElementById("card-bismillah").textContent = WEDDING_CONFIG.bismillah;
+        document.getElementById("hero-top-line").textContent = WEDDING_CONFIG.heroTopLine;
+
+        document.getElementById("groom-name").textContent = WEDDING_CONFIG.groomName;
+        document.getElementById("groom-parent").textContent = WEDDING_CONFIG.groomParent;
+        document.getElementById("groom-qual").textContent = WEDDING_CONFIG.groomQualification;
+        document.getElementById("groom-role").textContent = WEDDING_CONFIG.groomProfession;
+
+        document.getElementById("bride-name").textContent = WEDDING_CONFIG.brideName;
+        document.getElementById("bride-parent").textContent = WEDDING_CONFIG.brideParent;
+        document.getElementById("bride-qual").textContent = WEDDING_CONFIG.brideQualification;
+        document.getElementById("bride-role").textContent = WEDDING_CONFIG.brideProfession;
+
+        document.getElementById("welcome-message-text").textContent = "“" + WEDDING_CONFIG.welcomeMessage + "”";
+        document.getElementById("revealed-date-text").textContent = WEDDING_CONFIG.weddingDateDisplay;
+        document.getElementById("revealed-day-text").textContent = WEDDING_CONFIG.weddingDayDisplay;
+        document.getElementById("revealed-time-text").textContent = WEDDING_CONFIG.weddingTimeDisplay;
+
+        const mainEventsEl = document.getElementById("main-events-list");
+        mainEventsEl.innerHTML = WEDDING_CONFIG.mainEvents
+          .map(
+            (ev) =>
+              '<div class="translucent-glass-panel rounded-2xl p-4 text-center">' +
+              '<h3 class="font-serif-luxury font-bold text-xl text-[#FFFDF9]">' + ev.title + "</h3>" +
+              '<p class="font-sans-clean text-[11px] tracking-wider text-[#F2CF7E] font-semibold mt-1">' + ev.dateTime + "</p>" +
+              '<p class="font-serif-luxury italic text-base text-[#F5E6D3] mt-1.5">' + ev.note + "</p>" +
+              "</div>"
+          )
+          .join("");
+
+        document.getElementById("venue-name-text").textContent = WEDDING_CONFIG.venueName;
+        document.getElementById("venue-address-text").textContent = WEDDING_CONFIG.venueAddress;
+        document.getElementById("venue-map-link").href = WEDDING_CONFIG.venueMapUrl;
+        document.getElementById("dress-women-text").textContent = WEDDING_CONFIG.dressWomen;
+        document.getElementById("dress-men-text").textContent = WEDDING_CONFIG.dressMen;
+
+        const preEventsEl = document.getElementById("prewedding-events-list");
+        preEventsEl.innerHTML = WEDDING_CONFIG.preWeddingEvents
+          .map(
+            (ev) =>
+              '<div class="translucent-glass-panel rounded-2xl p-4 text-center">' +
+              '<h3 class="font-serif-luxury font-bold text-xl text-[#FFFDF9]">' + ev.title + "</h3>" +
+              '<p class="font-sans-clean text-[11px] tracking-wider text-[#F2CF7E] font-semibold mt-1">' + ev.dateTime + "</p>" +
+              '<p class="font-serif-luxury text-base text-[#F5E6D3] mt-1">' + ev.location + "</p>" +
+              "</div>"
+          )
+          .join("");
+
+        document.getElementById("transport-text").textContent = WEDDING_CONFIG.transportation;
+        document.getElementById("gifts-text").textContent = WEDDING_CONFIG.gifts;
+      } catch (e) {}
+    }
+
+    /* ============================================================
+       2. FLOATING GOLDEN DUST SPARKLES
+    ============================================================ */
+    function initDustParticles() {
+      try {
+        const layer = document.getElementById("dust-particles-layer");
+        if (!layer) return;
+        for (let i = 0; i < 20; i++) {
+          const dot = document.createElement("div");
+          dot.className = "gold-dust-dot";
+          const size = 3 + Math.random() * 4;
+          dot.style.width = size + "px";
+          dot.style.height = size + "px";
+          dot.style.left = Math.random() * 100 + "vw";
+          dot.style.top = Math.random() * 100 + "vh";
+          dot.style.setProperty("--dur", (3.8 + Math.random() * 3.5).toFixed(1) + "s");
+          dot.style.setProperty("--delay", (Math.random() * 3).toFixed(1) + "s");
+          layer.appendChild(dot);
+        }
+      } catch (e) {}
+    }
+
+    /* ============================================================
+       3. SOFT AMBIENT ROMANTIC CHIME (WEB AUDIO API)
+    ============================================================ */
+    let audioCtx = null;
+    let isPlayingMusic = false;
+    let chimeTimer = null;
+
+    function updateAudioIcons() {
+      try {
+        const onSvg = document.getElementById("audio-on-svg");
+        const offSvg = document.getElementById("audio-off-svg");
+        if (onSvg) onSvg.classList.toggle("hidden", !isPlayingMusic);
+        if (offSvg) offSvg.classList.toggle("hidden", isPlayingMusic);
+      } catch (e) {}
+    }
+
+    function playWarmChord() {
+      try {
+        if (!audioCtx || !isPlayingMusic) return;
+        const notes = [261.63, 329.63, 392.0, 493.88, 523.25];
+        const now = audioCtx.currentTime;
+        notes.forEach((freq, idx) => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(freq, now + idx * 0.28);
+          gain.gain.setValueAtTime(0.0001, now + idx * 0.28);
+          gain.gain.exponentialRampToValueAtTime(0.022, now + idx * 0.28 + 0.35);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.28 + 3.4);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(now + idx * 0.28);
+          osc.stop(now + idx * 0.28 + 3.5);
+        });
+      } catch (e) {}
+    }
+
+    window.startAmbientMusic = function () {
+      try {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextClass) return;
+        if (!audioCtx) {
+          audioCtx = new AudioContextClass();
+        }
+        if (audioCtx.state === "suspended") {
+          audioCtx.resume();
+        }
+        if (!isPlayingMusic) {
+          isPlayingMusic = true;
+          updateAudioIcons();
+          playWarmChord();
+          chimeTimer = setInterval(playWarmChord, 4400);
+        }
+      } catch (e) {}
+    };
+
+    function toggleAmbientMusic() {
+      try {
+        if (isPlayingMusic) {
+          isPlayingMusic = false;
+          clearInterval(chimeTimer);
+          updateAudioIcons();
+        } else {
+          window.startAmbientMusic();
+        }
+      } catch (e) {}
+    }
+
+    /* ============================================================
+       4. CELEBRATORY PETAL CONFETTI
+    ============================================================ */
+    window.spawnConfetti = function (x, y, count) {
+      try {
+        const total = count || 40;
+        const colors = ["#F2CF7E", "#880E4F", "#FCE4EC", "#C59B27", "#D4AF37"];
+        for (let i = 0; i < total; i++) {
+          const el = document.createElement("div");
+          el.className = "petal-particle";
+          const w = 7 + Math.random() * 7;
+          const h = 10 + Math.random() * 8;
+          el.style.width = w + "px";
+          el.style.height = h + "px";
+          el.style.left = x + "px";
+          el.style.top = y + "px";
+          el.style.background = colors[i % colors.length];
+          const angle = Math.random() * Math.PI * 2;
+          const dist = 60 + Math.random() * 210;
+          el.style.setProperty("--tx", Math.cos(angle) * dist + "px");
+          el.style.setProperty("--ty", (Math.sin(angle) * dist + 70) + "px");
+          el.style.setProperty("--rot", (Math.random() * 540 - 270) + "deg");
+          document.body.appendChild(el);
+          setTimeout(() => {
+            if (el.parentNode) el.parentNode.removeChild(el);
+          }, 2600);
+        }
+      } catch (e) {}
+    };
+
+    /* ============================================================
+       5. CENTERED SYMMETRIC SCRATCH-TO-REVEAL HEART (280 x 256)
+    ============================================================ */
+    let scratchListenersBound = false;
+    let isHeartRevealed = false;
+
+    window.initScratchHeart = function (forceRedraw) {
+      try {
+        const canvas = document.getElementById("scratch-heart-canvas");
+        if (!canvas || !canvas.getContext) return;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return;
+
+        if (isHeartRevealed && !forceRedraw) return;
+
+        const logicalW = 280;
+        const logicalH = 256;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        canvas.width = logicalW * dpr;
+        canvas.height = logicalH * dpr;
+        canvas.style.width = logicalW + "px";
+        canvas.style.height = logicalH + "px";
+
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(dpr, dpr);
+        ctx.globalCompositeOperation = "source-over";
+        ctx.clearRect(0, 0, logicalW, logicalH);
+
+        function traceHeartPath(c) {
+          c.beginPath();
+          c.moveTo(140, 242);
+          c.bezierCurveTo(140, 242, 18, 164, 18, 82);
+          c.bezierCurveTo(18, 40, 50, 14, 86, 14);
+          c.bezierCurveTo(111, 14, 130, 27, 140, 45);
+          c.bezierCurveTo(150, 27, 169, 14, 194, 14);
+          c.bezierCurveTo(230, 14, 262, 40, 262, 82);
+          c.bezierCurveTo(262, 164, 140, 242, 140, 242);
+          c.closePath();
+        }
+
+        // Paint metallic rose-gold & champagne-gold glitter foil
+        ctx.save();
+        traceHeartPath(ctx);
+        ctx.clip();
+
+        const glitterGrad = ctx.createLinearGradient(0, 0, logicalW, logicalH);
+        glitterGrad.addColorStop(0, "#F2CF7E");
+        glitterGrad.addColorStop(0.35, "#D991A8");
+        glitterGrad.addColorStop(0.7, "#C59B27");
+        glitterGrad.addColorStop(1, "#9E3B61");
+        ctx.fillStyle = glitterGrad;
+        ctx.fillRect(0, 0, logicalW, logicalH);
+
+        for (let i = 0; i < 2000; i++) {
+          const sx = Math.random() * logicalW;
+          const sy = Math.random() * logicalH;
+          const sr = 0.55 + Math.random() * 1.45;
+          const t = Math.random();
+          if (t > 0.65) {
+            ctx.fillStyle = "rgba(255, 248, 220, 0.94)";
+          } else if (t > 0.3) {
+            ctx.fillStyle = "rgba(252, 228, 236, 0.80)";
+          } else {
+            ctx.fillStyle = "rgba(29, 10, 18, 0.32)";
+          }
+          ctx.beginPath();
+          ctx.arc(sx, sy, sr, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        // Paint "✨ Scratch to Reveal ✨" directly on canvas
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.font = "italic 600 18px 'Cormorant Garamond', Georgia, serif";
+        ctx.fillStyle = "rgba(18, 6, 11, 0.60)";
+        ctx.fillText("✨ Scratch to Reveal ✨", logicalW / 2, 121);
+        ctx.fillStyle = "#FFFDF9";
+        ctx.fillText("✨ Scratch to Reveal ✨", logicalW / 2, 120);
+
+        ctx.restore();
+
+        // Crisp Champagne Gold Heart Outline
+        ctx.save();
+        traceHeartPath(ctx);
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "#F2CF7E";
+        ctx.stroke();
+        ctx.restore();
+
+        if (scratchListenersBound) return;
+        scratchListenersBound = true;
+
+        let isDrawing = false;
+        let strokeCount = 0;
+
+        function getCoords(clientX, clientY) {
+          const rect = canvas.getBoundingClientRect();
+          return {
+            x: ((clientX - rect.left) / rect.width) * logicalW,
+            y: ((clientY - rect.top) / rect.height) * logicalH
+          };
+        }
+
+        function scratchAt(x, y) {
+          if (isHeartRevealed) return;
+          ctx.save();
+          ctx.globalCompositeOperation = "destination-out";
+          ctx.beginPath();
+          ctx.arc(x, y, 28, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+
+          strokeCount++;
+          if (strokeCount % 8 === 0) {
+            checkClearedPercentage();
+          }
+        }
+
+        function checkClearedPercentage() {
+          if (isHeartRevealed) return;
+          const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+          let transparentPixels = 0;
+          let sampled = 0;
+          for (let i = 3; i < imgData.length; i += 48) {
+            sampled++;
+            if (imgData[i] < 128) transparentPixels++;
+          }
+          if (sampled > 0 && transparentPixels / sampled > 0.45) {
+            isHeartRevealed = true;
+            canvas.classList.add("is-cleared");
+            const rect = canvas.getBoundingClientRect();
+            window.spawnConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2, 46);
+          }
+        }
+
+        canvas.addEventListener("pointerdown", function (e) {
+          isDrawing = true;
+          const pt = getCoords(e.clientX, e.clientY);
+          scratchAt(pt.x, pt.y);
+        });
+
+        window.addEventListener("pointermove", function (e) {
+          if (!isDrawing) return;
+          const pt = getCoords(e.clientX, e.clientY);
+          scratchAt(pt.x, pt.y);
+        });
+
+        window.addEventListener("pointerup", function () {
+          if (isDrawing) {
+            isDrawing = false;
+            checkClearedPercentage();
+          }
+        });
+
+        canvas.addEventListener(
+          "touchstart",
+          function (e) {
+            if (e.touches.length > 0) {
+              e.preventDefault();
+              isDrawing = true;
+              const pt = getCoords(e.touches[0].clientX, e.touches[0].clientY);
+              scratchAt(pt.x, pt.y);
+            }
+          },
+          { passive: false }
+        );
+
+        canvas.addEventListener(
+          "touchmove",
+          function (e) {
+            if (!isDrawing || e.touches.length === 0) return;
+            e.preventDefault();
+            const pt = getCoords(e.touches[0].clientX, e.touches[0].clientY);
+            scratchAt(pt.x, pt.y);
+          },
+          { passive: false }
+        );
+
+        canvas.addEventListener("touchend", function () {
+          if (isDrawing) {
+            isDrawing = false;
+            checkClearedPercentage();
+          }
+        });
+      } catch (e) {}
+    };
+
+    /* ============================================================
+       6. LIVE COUNTDOWN TIMER (MARCH 20, 2027 AT 11:30 AM)
+    ============================================================ */
+    const TARGET_NIKAH_TIMESTAMP = new Date(2027, 2, 20, 11, 30, 0).getTime();
+
+    window.updateCountdown = function () {
+      try {
+        const now = Date.now();
+        const diff = Math.max(0, TARGET_NIKAH_TIMESTAMP - now);
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        const dEl = document.getElementById("cd-days");
+        const hEl = document.getElementById("cd-hours");
+        const mEl = document.getElementById("cd-minutes");
+        const sEl = document.getElementById("cd-seconds");
+
+        if (dEl) dEl.textContent = String(days).padStart(2, "0");
+        if (hEl) hEl.textContent = String(hours).padStart(2, "0");
+        if (mEl) mEl.textContent = String(minutes).padStart(2, "0");
+        if (sEl) sEl.textContent = String(seconds).padStart(2, "0");
+      } catch (e) {}
+    };
+
+    function startCountdown() {
+      window.updateCountdown();
+      setInterval(window.updateCountdown, 1000);
+    }
+
+    /* ============================================================
+       7. RSVP / GUESTBOOK WISHES FEED
+    ============================================================ */
+    const WISHES_KEY = "ayaan_zara_nikah_wishes_v3";
+    const defaultWishes = [
+      {
+        name: "Mr. & Mrs. Siddiqui",
+        attending: "Joyfully Accepts",
+        message: "MashaAllah! May Allah bless Ayaan & Zara with endless love, barakah, and happiness together."
+      },
+      {
+        name: "Armaan Qureshi",
+        attending: "Joyfully Accepts",
+        message: "Counting down the days to celebrate this grand Nikah in Jaipur!"
+      }
+    ];
+
+    function loadWishes() {
+      try {
+        const raw = localStorage.getItem(WISHES_KEY);
+        if (!raw) return defaultWishes.slice();
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed) && parsed.length ? parsed : defaultWishes.slice();
+      } catch (e) {
+        return defaultWishes.slice();
+      }
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function renderWishes() {
+      try {
+        const list = loadWishes();
+        const box = document.getElementById("wishes-list");
+        box.innerHTML = list
+          .map(
+            (item) =>
+              '<div class="p-3.5 rounded-2xl bg-[#12060B]/70 border border-[#F2CF7E]/35">' +
+              '<div class="flex items-center justify-between gap-2">' +
+              '<span class="font-serif-luxury font-bold text-base text-[#F2CF7E]">' + escapeHtml(item.name) + "</span>" +
+              '<span class="font-sans-clean text-[9px] tracking-wider uppercase px-2.5 py-0.5 rounded-full bg-[#1D0A12]/90 text-[#FCE4EC] border border-[#F2CF7E]/40">' +
+              escapeHtml(item.attending) +
+              "</span>" +
+              "</div>" +
+              '<p class="font-serif-luxury italic text-sm sm:text-base text-[#FFFDF9] mt-1.5 leading-relaxed">' +
+              "“" + escapeHtml(item.message) + "”" +
+              "</p>" +
+              "</div>"
+          )
+          .join("");
+      } catch (e) {}
+    }
+
+    /* ============================================================
+       8. INITIALIZATION ON DOM READY & WINDOW LOAD
+    ============================================================ */
+    function bootstrapApp() {
+      initInvitationContent();
+      initDustParticles();
+      startCountdown();
+      renderWishes();
+      window.initScratchHeart(true);
+
+      const audioBtn = document.getElementById("audio-control-btn");
+      if (audioBtn) {
+        audioBtn.addEventListener("click", toggleAmbientMusic);
+      }
+
+      const overlay = document.getElementById("envelope-overlay");
+      if (overlay) {
+        overlay.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            window.openEnvelope(e);
+          }
+        });
+      }
+
+      const rsvpForm = document.getElementById("rsvp-form");
+      if (rsvpForm) {
+        rsvpForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const nameInput = document.getElementById("guest-name");
+          const attendingInput = document.getElementById("guest-attending");
+          const wishInput = document.getElementById("guest-wish");
+          const name = nameInput.value.trim();
+          const attending = attendingInput.value;
+          const message = wishInput.value.trim();
+          if (!name || !message) return;
+
+          const updated = [{ name: name, attending: attending, message: message }].concat(loadWishes());
+          try {
+            localStorage.setItem(WISHES_KEY, JSON.stringify(updated));
+          } catch (err) {}
+
+          renderWishes();
+          rsvpForm.reset();
+
+          const successBanner = document.getElementById("rsvp-success-msg");
+          successBanner.classList.remove("hidden");
+          setTimeout(function () {
+            successBanner.classList.add("hidden");
+          }, 4500);
+        });
+      }
+
+      try {
+        if ("IntersectionObserver" in window) {
+          const observer = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("in-view");
+                }
+              });
+            },
+            { threshold: 0.08 }
+          );
+          document.querySelectorAll(".fade-up").forEach(function (el) {
+            observer.observe(el);
+          });
+        } else {
+          document.querySelectorAll(".fade-up").forEach(function (el) {
+            el.classList.add("in-view");
+          });
+        }
+      } catch (e) {}
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", bootstrapApp);
+    } else {
+      bootstrapApp();
+    }
+
+    window.addEventListener("load", function () {
+      window.updateCountdown();
+      window.initScratchHeart(false);
+    });
+  </script>
+</body>
+</html>
